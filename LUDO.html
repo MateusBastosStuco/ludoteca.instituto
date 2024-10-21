@@ -1,175 +1,178 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #366d0c;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludoteca Virtual</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #4d9219;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+    .container {
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+    h1,
+    h2 {
+        color: #1b5e20;
+        text-align: center;
+    }
 
-        h1,
-        h2 {
-            color: #1b5e20;
-            text-align: center;
-        }
+    input[type="text"],
+    input[type="password"],
+    button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-        input[type="text"],
-        input[type="password"],
-        button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+    button {
+        background-color: #388e3c;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        button {
-            background-color: #388e3c;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+    button:hover {
+        background-color: #2e7d32;
+        transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+    }
 
-        button:hover {
-            background-color: #2e7d32;
-        }
+    button:active {
+        transform: translateY(0); /* Retorna à posição normal ao clicar */
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
 
-        th {
-            background-color: #388e3c;
-            color: #fff;
-        }
+    th {
+        background-color: #388e3c;
+        color: #fff;
+    }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
 
-        .error,
-        .message {
-            color: #d9534f;
-            background-color: #f2dede;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 10px;
-            display: none;
-            text-align: center;
-        }
+    .error,
+    .message {
+        color: #d9534f;
+        background-color: #f2dede;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        display: none;
+        text-align: center;
+    }
 
-        .message {
-            color: #5bc0de;
-            background-color: #d9edf7;
-        }
+    .message {
+        color: #5bc0de;
+        background-color: #d9edf7;
+    }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-        }
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+    }
 
-        .modal .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .modal .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        .modal .close:hover,
-        .modal .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .modal .close:hover,
+    .modal .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-        .confirm-delete {
-            background-color: #fdfcfc;
-            color: rgb(0, 0, 0);
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-        }
+    .confirm-delete {
+        background-color: #fdfcfc;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+    }
 
-        .confirm-delete button {
-            margin-top: 10px;
-        }
+    .confirm-delete button {
+        margin-top: 10px;
+    }
 
-        .history-record {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-        }
+    .history-record {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+    }
 
-        .overdue {
-            color: #d9534f;
-            font-weight: bold;
-        }
+    .overdue {
+        color: #d9534f;
+        font-weight: bold;
+    }
 
-        .action-buttons {
-            text-align: center;
-        }
+    .action-buttons {
+        text-align: center;
+    }
 
-        .action-buttons button {
-            width: 30%;
-            padding: 10px;
-            margin: 10px 5px;
-        }
+    .action-buttons button {
+        width: 30%;
+        padding: 10px;
+        margin: 10px 5px;
+        border-radius: 4px; /* Arredondar cantos dos botões da seção de ações */
+    }
 
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        .logo img {
-            max-width: 100px;
-        }
+    .logo img {
+        max-width: 100px;
+    }
+</style>
+
     </style>
 </head>
 
@@ -246,7 +249,6 @@
                     <th>Nome da Pessoa</th>
                     <th>Data de Empréstimo</th>
                     <th>Data de Devolução</th>
-                    <th>Status</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -397,24 +399,27 @@
             });
         }
 
-        function loadBorrowings() {
-            const tbody = document.querySelector('#pendingBooksTable tbody');
-            tbody.innerHTML = '';
-            borrowings.forEach((borrowing, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${borrowing.title}</td>
-                    <td>${borrowing.person}</td>
-                    <td>${borrowing.borrowDate}</td>
-                    <td>${borrowing.returnDate}</td>
-                    <td class="${new Date(borrowing.returnDate) < new Date() ? 'overdue' : ''}">
-                        ${new Date(borrowing.returnDate) < new Date() ? 'Atrasado' : 'Pendente'}
-                    </td>
-                    <td><button onclick="confirmDelete(${index}, true)">Excluir</button></td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
+        
+    function loadBorrowings() {
+        const tbody = document.querySelector('#pendingBooksTable tbody');
+        tbody.innerHTML = '';
+        borrowings.forEach((borrowing, index) => {
+            const currentDate = new Date();
+            const returnDate = new Date(borrowing.returnDate);
+            const isOverdue = currentDate > returnDate;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${borrowing.title}</td>
+                <td>${borrowing.person}</td>
+                <td>${borrowing.borrowDate}</td>
+                <td>${borrowing.returnDate}</td>
+                <td><button onclick="confirmDelete(${index}, true)">Excluir</button></td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
 
         function showHistory(index) {
             const book = books[index];
@@ -426,7 +431,6 @@
                         <strong>Nome:</strong> ${entry.person}<br>
                         <strong>Data de Empréstimo:</strong> ${entry.borrowDate}<br>
                         <strong>Data de Devolução:</strong> ${entry.returnDate}<br>
-                        <strong>Status:</strong> ${entry.status}<br>
                     </div>
                 `;
             });
