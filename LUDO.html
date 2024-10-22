@@ -1,4 +1,3 @@
-<style>
     body {
         font-family: Arial, sans-serif;
         background-color: #366d0c;
