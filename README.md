@@ -1,4 +1,4 @@
- <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         background-color: #366d0c;
@@ -500,6 +500,3 @@
         }
     </script>
 </body>
-
-</html>
-](https://mateusbastosstuco.github.io/ludoteca.instituto/#livros-pendentes)
