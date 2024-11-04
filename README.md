@@ -1,4 +1,3 @@
-
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -174,7 +173,6 @@
     }
 </style>
 
-    </style>
 </head>
 
 <body>
