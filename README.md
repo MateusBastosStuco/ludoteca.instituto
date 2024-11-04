@@ -173,7 +173,7 @@
     }
 </style>
 
-</head>
+<head>
 
 <body>
     <div id="loginContainer" class="login-container">
