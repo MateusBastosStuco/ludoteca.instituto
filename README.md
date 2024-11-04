@@ -190,7 +190,7 @@
 
     <div id="mainContainer" class="container" style="display: none;">
         <div class="logo">
-            <img src="https://media.licdn.com/dms/image/C4E0BAQFLOmeON1RWag/company-logo_200_200/0/1626460469892?e=2147483647&v=beta&t=hoYNWLC__oXHeyur9ItafPQc4LT7m-AEctTYBl2G9w0" alt="Instituto Adama Logo">
+            <img src="https://media.licdn.com/dms/image/C4E0BAQFLOmeON1RWag/company-logo_200_200/0/1626460469892?e=2147483647&v=beta&t=hoYNWLC__oXHeyur9ItafPQc4LT7m-AEctTYBl2G9w0" alt="tuto Adama LogoInsti">
         </div>
         <h1>Ludoteca Virtual</h1>
 
