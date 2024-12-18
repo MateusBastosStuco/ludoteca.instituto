@@ -1,10 +1,18 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #366d0c;
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+        background-size: 400% 400%;
+        animation: rainbow 10s infinite linear;
         color: #333;
         margin: 0;
         padding: 0;
+    }
+
+    @keyframes rainbow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -12,7 +20,7 @@
         max-width: 800px;
         margin: 20px auto;
         padding: 20px;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
     }
@@ -45,11 +53,11 @@
 
     button:hover {
         background-color: #2e7d32;
-        transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+        transform: translateY(-2px);
     }
 
     button:active {
-        transform: translateY(0); /* Retorna à posição normal ao clicar */
+        transform: translateY(0);
     }
 
     table {
