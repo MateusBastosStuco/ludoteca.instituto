@@ -171,8 +171,6 @@
     }
 </style>
 
-</head>
-
 <body>
     <div id="loginContainer" class="login-container">
         <div class="container">
@@ -499,4 +497,3 @@
     </script>
 </body>
 
-</html>
