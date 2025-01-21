@@ -1,18 +1,10 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-        background-size: 400% 400%;
-        animation: rainbow 10s infinite linear;
+        background-color: #388e3c; /* Green background */
         color: #333;
         margin: 0;
         padding: 0;
-    }
-
-    @keyframes rainbow {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -25,8 +17,7 @@
         border-radius: 8px;
     }
 
-    h1,
-    h2 {
+    h1, h2 {
         color: #1b5e20;
         text-align: center;
     }
@@ -66,8 +57,7 @@
         margin-top: 20px;
     }
 
-    th,
-    td {
+    th, td {
         border: 1px solid #ddd;
         padding: 10px;
         text-align: left;
@@ -181,7 +171,7 @@
     }
 </style>
 
-<head>
+</head>
 
 <body>
     <div id="loginContainer" class="login-container">
@@ -198,7 +188,7 @@
 
     <div id="mainContainer" class="container" style="display: none;">
         <div class="logo">
-            <img src="https://media.licdn.com/dms/image/C4E0BAQFLOmeON1RWag/company-logo_200_200/0/1626460469892?e=2147483647&v=beta&t=hoYNWLC__oXHeyur9ItafPQc4LT7m-AEctTYBl2G9w0" alt="tuto Adama LogoInsti">
+            <img src="https://media.licdn.com/dms/image/C4E0BAQFLOmeON1RWag/company-logo_200_200/0/1626460469892?e=2147483647&v=beta&t=hoYNWLC__oXHeyur9ItafPQc4LT7m-AEctTYBl2G9w0" alt="Instituto Adama Logo">
         </div>
         <h1>Ludoteca Virtual</h1>
 
@@ -508,3 +498,5 @@
         }
     </script>
 </body>
+
+</html>
