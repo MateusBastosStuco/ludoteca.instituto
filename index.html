@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludoteca Virtual</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo CSS -->
+</head>
+<body>
+    <!-- Login Container -->
+    <div id="loginContainer" class="login-container">
+        <div class="container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="loginError" class="error"></div>
+        </div>
+    </div>
+
+    <!-- Main Container (visible após login) -->
+    <div id="mainContainer" class="container" style="display: none;">
+        <div class="logo">
+            <img src="https://media.licdn.com/dms/image/C4E0BAQFLOmeON1RWag/company-logo_200_200/0/1626460469892?e=2147483647&v=beta&t=hoYNWLC__oXHeyur9ItafPQc4LT7m-AEctTYBl2G9w0" alt="Instituto Adama Logo">
+        </div>
+        <h1>Ludoteca Virtual</h1>
+
+        <!-- Adicionar Livro -->
+        <form id="addBookForm">
+            <h2>Adicionar Livro</h2>
+            <input type="text" id="bookAuthor" placeholder="Autor do Livro" required>
+            <button type="submit">Adicionar Livro</button>
+        </form>
+
+        <!-- Emprestar Livro -->
+        <form id="borrowBookForm">
+            <h2>Emprestar Livro</h2>
+            <input type="text" id="borrowCode" placeholder="Código do Livro" required>
+            <input type="text" id="borrowPerson" placeholder="Nome da Pessoa" required>
+            <button type="submit">Emprestar Livro</button>
+        </form>
+
+        <!-- Botões de Ações -->
+        <div class="action-buttons">
+            <button onclick="toggleBooksTable()">Listar Livros Registrados</button>
+            <button onclick="togglePendingBooksTable()">Listar Livros Pendentes</button>
+            <button onclick="logout()">Sair</button>
+            <button onclick="clearAllHistory()">Limpar Todo o Histórico</button>
+        </div>
+
+        <!-- Mensagens de Erro -->
+        <div id="message" class="message"></div>
+        <div id="error" class="error"></div>
+
+        <!-- Tabelas de Livros -->
+        <h2>Livros Registrados</h2>
+        <table id="booksTable">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Autor</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Livros registrados serão adicionados aqui -->
+            </tbody>
+        </table>
+
+        <h2>Livros Pendentes</h2>
+        <table id="pendingBooksTable">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome da Pessoa</th>
+                    <th>Data de Empréstimo</th>
+                    <th>Data de Devolução</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Livros pendentes serão adicionados aqui -->
+            </tbody>
+        </table>
+
+        <!-- Modal Histórico -->
+<div id="historyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('historyModal')">&times;</span>
+        <div id="historyContent">
+            <!-- O histórico do livro será adicionado aqui -->
+        </div>
+    </div>
+</div>
+
+
+        <!-- Modal Excluir Livro -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('deleteModal')">&times;</span>
+                <div class="confirm-delete">
+                    <p>Tem certeza que deseja excluir o livro?</p>
+                    <button id="confirmDeleteButton" onclick="confirmDelete()">Confirmar</button>
+                    <button onclick="closeModal('deleteModal')">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Referência ao arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

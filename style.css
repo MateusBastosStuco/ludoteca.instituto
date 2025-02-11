@@ -1,0 +1,249 @@
+/* Estilo atualizado com foco em modernidade e interação */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #388e3c;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: linear-gradient(135deg, #388e3c, #2e7d32);
+    font-smoothing: antialiased; /* Melhora o renderizado da fonte */
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15); /* Efeito de sombra ao passar o mouse */
+}
+
+h1, h2 {
+    color: #1b5e20;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Tamanho de fonte maior e mais visível */
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+button:focus {
+    outline: none;
+    border-color: #388e3c;
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5);
+    background-color: #f1f8e9; /* Cor de fundo sutil no foco */
+}
+
+button {
+    background-color: #388e3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background-color: #2e7d32;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    background-color: #388e3c;
+    color: #fff;
+    font-weight: bold;
+}
+
+td:hover {
+    background-color: #f1f8e9; /* Destaque em linhas ao passar o mouse */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.error,
+.message {
+    color: #d9534f;
+    background-color: #f2dede;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    display: none;
+    text-align: center;
+}
+
+.message {
+    color: #5bc0de;
+    background-color: #d9edf7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+    animation: fadeInModal 0.3s ease-in-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal .close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: #000;
+}
+
+.confirm-delete {
+    background-color: #fdfcfc;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.confirm-delete button {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #d9534f;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-delete button:hover {
+    background-color: #c9302c;
+}
+
+.history-record {
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.history-record:hover {
+    background-color: #e8f5e9; /* Destacar histórico ao passar o mouse */
+}
+
+.overdue {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.action-buttons {
+    text-align: center;
+}
+
+.action-buttons button {
+    width: 30%;
+    padding: 12px;
+    margin: 12px 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-buttons button:hover {
+    background-color: #2e7d32;
+    transform: translateY(-3px);
+}
+
+.action-buttons button:active {
+    transform: translateY(0);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    max-width: 120px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2); /* Aumenta o brilho ao passar o mouse */
+}
